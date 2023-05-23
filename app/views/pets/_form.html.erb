@@ -1,0 +1,14 @@
+<h3>Please fill out the pet information</h3>
+<%= form_with model: pet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :species %>
+  <%= f.select :species, Pet::SPECIES %>
+  <div class="div">
+    <%= f.label :found_on %>
+    <%= f.date_field :found_on %>
+  </div>
+  <%= f.submit "Report missing pet", class: "btn btn-primary" %>
+<% end %>

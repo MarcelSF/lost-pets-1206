@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center">
+  <h1>Welcome to the Lost Pets app</h1>
+  <%= link_to "Report a pet", new_pet_path, class: "btn btn-primary" %>
+</div>
+
+<ul>
+  <% @pets.each do |pet| %>
+  <li>
+    <%= link_to "#{pet.name} the #{pet.species.capitalize}", pet_path(pet) %>
+    <% if pet.found_on.blank? %>
+    <p>Pet not found yet</p>
+    <% else %>
+      <p><%= pet.found_days_ago%><p>
+    <% end %>
+    <p>Return to <%= pet.address %></p>
+  </li>
+  <% end %>
+</ul>

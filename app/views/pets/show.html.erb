@@ -1,0 +1,9 @@
+<div class="d-flex align-items-center">
+  <h3><%= @pet.name %></h3>
+  <%= link_to "Update pet info", edit_pet_path(@pet), class:"btn btn-info" %>
+  <%= link_to "Remove pet", pet_path(@pet), data: {turbo_method: "delete", turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+</div>
+<p>Species: <%= @pet.species.capitalize %></p>
+<p>Found on: <%= @pet.found_on %></p>
+<p>Address: <%= @pet.address %></p>
+<%= link_to "Back to list", root_path %>
