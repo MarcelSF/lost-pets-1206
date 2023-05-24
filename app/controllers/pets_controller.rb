@@ -17,7 +17,7 @@ class PetsController < ApplicationController
     if @pet.save
       redirect_to pet_path(@pet)
     else
-      render "new"
+      render "new", pet: @pet, status: :unprocessable_entity
     end
   end
   
